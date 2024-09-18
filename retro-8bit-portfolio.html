@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - 8-bit Coder</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        :root {
+            --bg-color: #000000;
+            --text-color: #00FF00;
+            --accent-color: #FF00FF;
+            --secondary-color: #0000FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 10px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 2px solid var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        section {
+            padding: 40px 0;
+            border-top: 2px solid var(--text-color);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .pixel-art {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 5px 10px;
+            font-size: 0.8rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 2px solid var(--accent-color);
+            padding: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .project-card h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input, textarea {
+            font-family: 'Press Start 2P', cursive;
+            padding: 10px;
+            background-color: var(--bg-color);
+            border: 2px solid var(--text-color);
+            color: var(--text-color);
+        }
+
+        button {
+            font-family: 'Press Start 2P', cursive;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.8rem;
+        }
+
+        .pixel-border {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 10px solid var(--text-color);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .blink {
+            animation: blink 1s steps(1, end) infinite;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0),
+                rgba(255, 255, 255, 0) 50%,
+                rgba(0, 0, 0, 0.2) 50%,
+                rgba(0, 0, 0, 0.2)
+            );
+            background-size: 100% 4px;
+            z-index: 9998;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <div class="pixel-border"></div>
+    <div class="scanlines"></div>
+
+    <header>
+        <div class="container">
+            <h1>JOHN DOE<span class="blink">_</span></h1>
+            <p>8-BIT FULL-STACK DEV</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#skills">SKILLS</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>ABOUT ME</h2>
+                <p>GREETINGS, PLAYER! I'M JOHN, A LEVEL 99 FULL-STACK DEVELOPER ON A QUEST TO CREATE EPIC WEB APPLICATIONS AND DEFEAT BUGS.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>SKILLS</h2>
+                <div class="skills-list">
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">React</span>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">Git</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>PROJECTS</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>RPG INVENTORY</h3>
+                        <p>A React-based inventory management system for RPG games.</p>
+                        <a href="#">VIEW QUEST</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>PIXEL PLATFORMER</h3>
+                        <p>A retro-style platformer game built with JavaScript and HTML5 Canvas.</p>
+                        <a href="#">PLAY GAME</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>8-BIT WEATHER</h3>
+                        <p>A weather forecast app with a nostalgic 8-bit UI.</p>
+                        <a href="#">CHECK FORECAST</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>SEND MESSAGE</h2>
+                <form>
+                    <input type="text" placeholder="ENTER NAME" required>
+                    <input type="email" placeholder="ENTER EMAIL" required>
+                    <textarea placeholder="TYPE MESSAGE" rows="5" required></textarea>
+                    <button type="submit">SEND</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 JOHN DOE. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
