@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe - 8-bit Coder</title>
+    <title>Sayanth T M - Tech Enthusiast</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -93,11 +93,6 @@
             text-align: center;
         }
 
-        .pixel-art {
-            image-rendering: pixelated;
-            image-rendering: crisp-edges;
-        }
-
         .skills-list {
             display: flex;
             flex-wrap: wrap;
@@ -135,11 +130,6 @@
             margin-bottom: 10px;
         }
 
-        .project-card a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
         form {
             display: flex;
             flex-direction: column;
@@ -174,55 +164,13 @@
             padding: 20px 0;
             font-size: 0.8rem;
         }
-
-        .pixel-border {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 10px solid var(--text-color);
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .blink {
-            animation: blink 1s steps(1, end) infinite;
-        }
-
-        .scanlines {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(255, 255, 255, 0),
-                rgba(255, 255, 255, 0) 50%,
-                rgba(0, 0, 0, 0.2) 50%,
-                rgba(0, 0, 0, 0.2)
-            );
-            background-size: 100% 4px;
-            z-index: 9998;
-            pointer-events: none;
-            opacity: 0.1;
-        }
     </style>
 </head>
 <body>
-    <div class="pixel-border"></div>
-    <div class="scanlines"></div>
-
     <header>
         <div class="container">
-            <h1>JOHN DOE<span class="blink">_</span></h1>
-            <p>8-BIT FULL-STACK DEV</p>
+            <h1>Sayanth T M<span class="blink">_</span></h1>
+            <p>Tech Enthusiast</p>
             <nav>
                 <ul>
                     <li><a href="#about">ABOUT</a></li>
@@ -238,7 +186,7 @@
         <section id="about">
             <div class="container">
                 <h2>ABOUT ME</h2>
-                <p>GREETINGS, PLAYER! I'M JOHN, A LEVEL 99 FULL-STACK DEVELOPER ON A QUEST TO CREATE EPIC WEB APPLICATIONS AND DEFEAT BUGS.</p>
+                <p>I am Sayanth, a B.Tech student and a tech enthusiast passionate about application development, data analytics, and web development.</p>
             </div>
         </section>
 
@@ -246,11 +194,11 @@
             <div class="container">
                 <h2>SKILLS</h2>
                 <div class="skills-list">
-                    <span class="skill-item">JavaScript</span>
-                    <span class="skill-item">React</span>
-                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">Flutter</span>
                     <span class="skill-item">Python</span>
-                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">Dart</span>
+                    <span class="skill-item">C</span>
+                    <span class="skill-item">MySQL</span>
                     <span class="skill-item">Git</span>
                 </div>
             </div>
@@ -261,19 +209,16 @@
                 <h2>PROJECTS</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <h3>RPG INVENTORY</h3>
-                        <p>A React-based inventory management system for RPG games.</p>
-                        <a href="#">VIEW QUEST</a>
+                        <h3>Emo</h3>
+                        <p>A Flutter app providing emotional support using AI-generated personalized responses.</p>
                     </div>
                     <div class="project-card">
-                        <h3>PIXEL PLATFORMER</h3>
-                        <p>A retro-style platformer game built with JavaScript and HTML5 Canvas.</p>
-                        <a href="#">PLAY GAME</a>
+                        <h3>BMI Calculator</h3>
+                        <p>A Flutter app designed to calculate BMI with a user-friendly interface.</p>
                     </div>
                     <div class="project-card">
-                        <h3>8-BIT WEATHER</h3>
-                        <p>A weather forecast app with a nostalgic 8-bit UI.</p>
-                        <a href="#">CHECK FORECAST</a>
+                        <h3>Medic</h3>
+                        <p>A medication management app with OCR and text-to-speech features.</p>
                     </div>
                 </div>
             </div>
@@ -281,7 +226,7 @@
 
         <section id="contact">
             <div class="container">
-                <h2>SEND MESSAGE</h2>
+                <h2>CONTACT ME</h2>
                 <form>
                     <input type="text" placeholder="ENTER NAME" required>
                     <input type="email" placeholder="ENTER EMAIL" required>
@@ -294,19 +239,8 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 JOHN DOE. ALL RIGHTS RESERVED.</p>
+            <p>&copy; 2024 Sayanth T M. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
